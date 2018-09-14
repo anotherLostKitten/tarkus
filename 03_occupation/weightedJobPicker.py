@@ -12,10 +12,10 @@ from csv import reader
 #   prompt specifies prompt text.
 def getPath(prompt):
     while True:
-        userin = input(prompt)
+        userin = input(prompt, defaultPath)
         path = getcwd() + "/" + userin
         if userin == "":
-            return path + "occupations.csv"
+            return path + defaultPath
         if isfile(path):
             return path
         print("File not found. Try again.\n")
@@ -26,7 +26,7 @@ def csvToDict():
     occupations = {}
 
     # open the csv file object, bind to variable
-    csvFileObject = open(getPath("Choose file name. Leave blank for occupations.csv. | "), 'r')
+    csvFileObject = open(getPath("Choose file name. Leave blank for occupations.csv. | ", "occupations.csv"), 'r')
     # read the records in the csv
     readerObject = reader(csvFileObject)
     
