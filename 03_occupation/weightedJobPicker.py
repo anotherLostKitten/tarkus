@@ -10,9 +10,9 @@ from csv import reader
 
 # Repeatedly prompts user for a file from working directory until they select a valid file.
 #   prompt specifies prompt text.
-def getPath(prompt):
+def getPath(prompt, defaultPath):
     while True:
-        userin = input(prompt, defaultPath)
+        userin = input(prompt)
         path = getcwd() + "/" + userin
         if userin == "":
             return path + defaultPath
