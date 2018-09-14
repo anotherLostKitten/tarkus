@@ -4,9 +4,20 @@
 # 2018-09-14
 
 from os import getcwd
+# 'getcwd' method from 'os' module -- Return a string representing the current working directory. <0>
+
 from os.path import isfile
+# 'isfile' method from 'os.path' module -- Return True if [specified] path is an existing regular file. <1>
+
 from random import random
+# imports the 'random' method from the 'random' module <2>                                                                                                                                                                                                               
+# Return the next random floating point number in the range [0.0, 1.0)
+# Return a k sized list of elements chosen from the population with replacement.                                                                                                                                                                                           
+# If a weights sequence is specified, selections are made according to the relative weights.  
+
 from csv import reader
+# imports the 'reader' method from the 'csv' module to parse through csv file <3>
+
 
 # Repeatedly prompts user for a file from working directory until they select a valid file.
 #   prompt specifies prompt text.
@@ -53,12 +64,16 @@ def weightedRandom(wc, total = None):
         if curWeight >= endWeight:
             return i # dict value.
     raise ValueError("Value of total passed was incorrect.") # If the function gets here,
-                                                             # user pased a total value that
+                                                             # user passed a total value that
                                                              # was wrong.
 
 
-
-d = csvToDict()
-print(weightedRandom(d))
+dict = csvToDict()
+print( weightedRandom(dict) )
 
     
+# References
+# <0> https://docs.python.org/3/library/os.html#os.getcwd
+# <1> https://docs.python.org/3/library/os.path.html#os.path.isfile
+# <2> https://docs.python.org/3/library/random.html#random.choices
+# <3> https://docs.python.org/3/library/csv.html#csv.reader
