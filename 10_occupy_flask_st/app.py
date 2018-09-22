@@ -19,7 +19,6 @@ def hello_world():
 @app.route("/my_foist_template")
 def template():
     d = csvToDict()
-    print(d)
     t = round(sum(d.values()), 1)
     r = weightedRandom(d, t)
     return render_template("/a.html", jobDict = d, result = r, total = t)
