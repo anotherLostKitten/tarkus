@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+	<td><b>Job Class</b></td>
+	<td><b>Percentage</b></td>
+      </tr>
+      {% for i in jobDict %}
+      <tr>
+	<td> {{ i }} </td>
+	<td> {{ jobDict[i] }} </td>
+      </tr>
+      {% endfor %}
+      <tr>
+	<td><b>Total</b></td>
+	<td><b>{{ total }}</b></td>
+      </tr>
+    </table>
+    <br><br>
+    <b>You should do this job: {{ result }}</b>
+  </body>
+</html>
