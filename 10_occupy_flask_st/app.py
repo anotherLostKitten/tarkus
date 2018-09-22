@@ -1,4 +1,4 @@
-# Theodore Peters
+# Theodore Peters, Jason Lin -- Name of Team's Team Name
 # SoftDev1 pd7
 # K10 -- Jinja Tuning
 # 2018-09-24
