@@ -1,4 +1,4 @@
-# Theodore Peters, Jason Lin -- Name of Team's Team Name
+# Theodore Peters, Jason Lin -- CuriousIncident
 # SoftDev1 pd7
 # K10 -- Jinja Tuning
 # 2018-09-24
@@ -8,15 +8,13 @@ from os import getcwd
 from random import random
 from csv import reader
 
-
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    print(__name__ + "\n")
-    return ""
+    return "Do you want to look at <a href='/occupations'>job?</a>"
 
-@app.route("/my_foist_template")
+@app.route("/occupations")
 def template():
     d = csvToDict()
     t = round(sum(d.values()), 1)
@@ -31,7 +29,7 @@ def csvToDict():
     csvFileObject = open("data/occupations.csv", 'r')
     # read the records in the csv
     readerObject = reader(csvFileObject)
-    
+
     for record in readerObject:
         # skip over the first & last records
         if record[0] != "Job Class" and record[0] != "Total":
