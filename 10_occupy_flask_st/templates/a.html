@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Jobs in the United States</title>
   </head>
   <body>
-    <table>
+    <b>You should do this job:</b> {{ result }}
+    <br><br>
+    <b>Percentage of Jobs in America</b>
+    <br>
+    <table border="1">
       <tr>
-	<td><b>Job Class</b></td>
-	<td><b>Percentage</b></td>
+	      <td><b>Job Class</b></td>
+	      <td><b>Percentage</b></td>
       </tr>
       {% for i in jobDict %}
       <tr>
-	<td> {{ i }} </td>
-	<td> {{ jobDict[i] }} </td>
+	      <td> {{ i }} </td>
+	      <td> {{ jobDict[i] }} </td>
       </tr>
       {% endfor %}
       <tr>
-	<td><b>Total</b></td>
-	<td><b>{{ total }}</b></td>
+	      <td><b>Total</b></td>
+	      <td><b>{{ total }}</b></td>
       </tr>
     </table>
-    <br><br>
-    <b>You should do this job: {{ result }}</b>
   </body>
 </html>
