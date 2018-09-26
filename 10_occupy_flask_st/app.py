@@ -15,7 +15,7 @@ def hello_world():
 @app.route("/occupations")
 def template():
     jobDict = occupation.csvToDict()
-    total = round(sum(d.values()), 1)
+    total = round(sum(jobDict.values()), 1)
     result = occupation.weightedRandom(jobDict, total)
     return render_template("/a.html", jobDict = jobDict, result = result, total = total)
 
