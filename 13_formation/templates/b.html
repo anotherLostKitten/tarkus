@@ -1,10 +1,23 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>bazinga2</title>
+    <title>Mr. Sheldon Bazinga's Super Secret Login Screen!</title>
+    <style>
+      div {font-family: "Comic Sans MS"}
+    </style>
   </head>
   <body>
-    you said you're favourite time sheldon said the bazinga le ebic style was<br><br> {{ a }}
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>also you're dum
+    <div align="center">
+      {% if a == "Mr. Sheldon Bazinga" %}
+      <h1><b>Welcome, Master Mr. Sheldon Bazinga</b></h1><br/>
+      <img src="static/bazinga_happy.jpg"/><br/><br/>
+      Here is the secret image:
+      <img src="secret_image.jpg"/>
+      {% else %}
+      <h1><b>What are you trying to pull, nerd?! You're not Mr. Sheldon Bazinga, you're {{ a }}!</b></h1><br/>
+      <img src="static/bazinga_angry.jpg"/><br/><br/>
+      GET OUT OF HERE BEFORE SOMEBODY (BY WHICH I MEAN YOU, OBVIOUSLY) GETS BAZINGA'D ON EPIC STYLE
+      {% endif %}
+    </div>
   </body>
 </html>
