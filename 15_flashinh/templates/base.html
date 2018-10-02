@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      www.{% block title %}{% endblock %}.net
+    </title>
+  </head>
+  <body align = "center">
+    {% set msgs = get_flashed_messages() %}
+
+    {% for i in msgs %}
+    {{ i }}, you FOOL! <br/>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
