@@ -1,7 +1,7 @@
 # Flasking your name -- Imad Belkebir, Theodore Peters
 # SoftDev1 pd7
-# K14 -- Do I Know You?
-# 2018-10-02
+# K15 -- Oh yes, perhaps I do..................................................
+# 2018-10-03
 
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 import os
@@ -13,7 +13,6 @@ app.secret_key = os.urandom(32)
 
 @app.route("/")
 def root():
-    print("hello? is there anybody in there?")
     if 'username' in session and session['username'] == user: # if user already logged in
         flash("Welcome back, " + session['username'])
         return render_template("welcome.html", var1=session['username'])
