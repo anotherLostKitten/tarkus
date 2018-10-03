@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Welcome!</title>
-</head>
-<body>
-  <form action="/login" method="POST">
-    <h2>Provide thy username</h2>
-    <input type="text" name="username">
-    <br>
-    <h2>Provide thy password</h2>
-    <input type="password" name="pass">
-    <br><br>
-    <input type="submit">
-  </form>
+{% extends "base.html" %}
+
+{% block title %}Log ye self in{% block title %}
+
+{% block content %}
+<form action="/login" method="POST">
+  <h2>Provide thy username:</h2>
+  <input type="text" name="username">
   <br>
-  <h2><font color="red">{{ var1 }}</font></h2>
-</body>
-</html>
+  <h2>Provide thy password:</h2>
+  <input type="password" name="pass">
+  <br><br>
+  <input type="submit">
+</form>
+{% block content %}
