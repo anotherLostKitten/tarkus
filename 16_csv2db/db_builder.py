@@ -1,27 +1,33 @@
-#Clyde "Thluffy" Sinclair
-#SoftDev1 pd0
-#SQLITE3 BASICS
-#2018-10-04
+# Tarkus -- Theodore Peters, Mai Rachlevsky
+# SoftDev1 pd7
+# k16 -- No Trouble
+# 2018-10-05
+
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O
 
-
-DB_FILE="discobandit.db"
-
-db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+db = sqlite3.connect('datta.db') #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops
+c.execute("CREATE TABLE nerds(name TEXT, age INTEGER, id INTEGER PRIMARY KEY);")
 
-#==========================================================
-#INSERT YOUR POPULATE CODE IN THIS ZONE
+csvfile = open('raw/peeps.csv')
+reader = csv.DictReader(csvfile)
+for row in reader:
+    c.execute("INSERT INTO nerds VALUES('" + row['name'] + "', " + row['age'] + ", " + row['id'] + ");")
+csvfile.close()
 
+csvfile = open('raw/courses.csv')
+c.execute ("CREATE TABLE teacher_reviews(code TEXT, mark INTEGER, id);")
+reader = csv.DictReader(csvfile)
+for row in reader:
+    c.execute("INSERT INTO teacher_reviews VALUES('" + row['code'] + "', " + row['mark'] + ", " + row['id'] + ");")
+csvfile.close()
 
-command = ""          #build SQL stmt, save as string
-c.execute(command)    #run SQL statement
+db.commit()
 
-#==========================================================
-
-db.commit() #save changes
+c.execute("SELECT * FROM nerds;")
+print(c.fetchall())
+c.execute("SELECT * FROM teacher_reviews")
+print(c.fetchall())
 db.close()  #close database
-
-
