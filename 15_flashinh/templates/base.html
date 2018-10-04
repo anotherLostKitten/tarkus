@@ -7,12 +7,16 @@
   </head>
   <body align = "center">
     {% set msgs = get_flashed_messages() %}
-
+    <div align="center"><font color="red"><b>
     {% for i in msgs %}
     {{ i }}, you FOOL! <br/>
     {% endfor %}
-
+    </b></font></div>
     {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    &copy; oc epic website do not steal
     {% endblock %}
   </body>
 </html>
