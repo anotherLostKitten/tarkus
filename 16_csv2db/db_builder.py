@@ -18,7 +18,7 @@ for row in reader:
 csvfile.close()
 
 csvfile = open('raw/courses.csv')
-c.execute ("CREATE TABLE teacher_reviews(code TEXT, mark INTEGER, id);")
+c.execute ("CREATE TABLE teacher_reviews(code TEXT, mark INTEGER, id INTEGER);")
 reader = csv.DictReader(csvfile)
 for row in reader:
     c.execute("INSERT INTO teacher_reviews VALUES('" + row['code'] + "', " + row['mark'] + ", " + row['id'] + ");")

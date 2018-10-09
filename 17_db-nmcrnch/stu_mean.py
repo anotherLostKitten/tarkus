@@ -17,15 +17,15 @@ def get_avgs():
     c.execute("SELECT id FROM nerds;")
     students = c.fetchall()[:]
     for i in students:
-        c.execute("SELECT mark FROM teacher_reviews WHERE teacher_reviews.id={};".format(i[0]))
+        c.execute("SELECT mark FROM teacher_reviews WHERE teacher_reviews.id=?;", i)
         grades = c.fetchall()
         avg = 0.0
         for j in grades:
             avg += j[0]
         avg /= len(grades)
-        c.execute("INSERT INTO peeps_avg VALUES({}, {});".format(i[0], avg))
+        c.execute("INSERT INTO peeps_avg VALUES(?, ?);", (i[0], avg))
 def add_course(code, mark, sid):
-    c.execute('INSERT INTO teacher_reviews VALUES("{}", {}, {});'.format(code, mark, sid))
+    c.execute('INSERT INTO teacher_reviews VALUES(?, ?, ?);', (code, mark, sid))
 
 get_avgs()
 c.execute("SELECT * FROM peeps_avg;")
