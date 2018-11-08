@@ -1,13 +1,13 @@
 <!doctype html>
-<!--
-tooltips (media) ivan
-callout (containers) ivan
-top bar (navigation) theodore
-button (controls) theodore
-flexbox alignment (utilities) ivan
-grid xy (general) theodore 
--->
 
+<!--
+    label (media) ivan
+    callout (containers) ivan
+    top bar (navigation) theodore
+    button (controls) theodore
+    float classes (utilities) ivan
+    grid xy (general) theodore 
+  -->
 
 <html>
   <head>
@@ -15,142 +15,82 @@ grid xy (general) theodore
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0-rc.4/css/foundation.css">
   </head>
   <body>
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <h1>Foundation:</h1>
-        </div>
+    <div class="top-bar" id="topbar-demo"><div class="top-bar-left">
+	<ul class="menu">
+	  <li class="menu-text">Some nifty foundation features:</li>
+	  <li><a href="#topbar-demo">topbar</a></li>
+	  <li><a href="#label-demo">labels</a></li>
+	  <li><a href="#callout-demo">callouts</a></li>
+	  <li><a href="#float-demo">floats</a></li>
+	  <li><a href="#button-demo">buttons</a></li>
+	  <li><a href="#grid-demo">grids</a></li>
+	</ul>
+    </div></div> 
+    <h2 id="label-demo">Labels</h2>
+    <span class="label primary">Primary Label</span>
+    <span class="label secondary">Secondary Label</span>
+    <span class="label success">Success Label</span>
+    <span class="label alert">Alert Label</span>
+    <span class="label warning">Warning Label</span>
+    <br>
+    <ul>
+      <li> Customized labels with different colors</li>
+    </ul>
+    <br>
+    <br>
+    <h2 id="callout-demo">Callouts</h2>
+    <div class="callout">
+      <h5>This is a callout</h5>
+      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+      <a href="#topbar-demo">It's dangerous to go alone, take this.</a>
+    </div>
+    <div class="callout success">
+      <h5>This is a secondary callout</h5>
+      <p>Yadda yadda but in green.</p>
+      <a href="#topbar-demo">It's dangerous to go alone, take this.</a>
+    </div>
+    <br>
+    <ul>
+      <li> Customized callouts with different colors</li>
+    </ul>
+    <br>
+    <br>
+    <h2 id="float-demo">Float Classes</h2>
+    <div class="callout clearfix">
+      <a class="button float-left">Left</a>
+      <a class="button float-right">Right</a>
+    </div>
+    <br>
+    <ul>
+      <li> Customized float classes with different colors</li>
+    </ul>
+
+    <h2 id="button-demo">Buttons</h2>
+    <h5>link buttons:</h5>
+    <a href="#topbar-demo" class="button">Return to top of page</a>
+    <a href="https://discord.gg/QMGM4tu" class="warning button">Join the computer interaction club discord server</a>
+    <h5>action buttons (not hooked up to anything but they COULD be):</h5>
+
+    <button type="button" class="success button">green</button>
+    <button type="button" class="alert button">not green</button>
+    
+    <h2 id="grid-demo">Grids</h2>
+    <div class="grid-container fluid">
+      <div class="grid-x grid-margin-x grid-padding-x">
+	<div class="cell small-6"><div class="callout">easy to make custom</div></div>
+	<div class="cell small-4"><div class="callout">sized cells with</div></div>
+	<div class="cell small-2"><div class="callout">a grid!</div></div>
       </div>
-
-      <div class="grid-x grid-padding-x">
-        <div class="large-8 medium-8 cell">
-          <h5>Foundation has FANCY grids</h5>
-
-          <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-              <div class="primary callout">
-                <p><strong>Here's one!</strong></p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Big hello</p>
-              </div>
-            </div>
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Another big hello</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Less big hello</p>
-              </div>
-            </div>
-            <div class="large-3 medium-3 small-3 cell">
-              <div class="primary callout">
-                <p>Hello?</p>
-              </div>
-            </div>
-            <div class="large-2 medium-2 small-2 cell">
-              <div class="primary callout">
-                <p>Hello.</p>
-              </div>
-            </div>
-	    <div class="large-1 medium-1 small-1 cell">
-              <div class="primary callout">
-                <p>etc.</p>
-              </div>
-            </div>
-	    <div class="large-2 medium-2 small-2 cell">
-              <div class="primary callout">
-                <p>...</p>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <h5>...And forms:</h5>
-          <form>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>What is the difference between a duck?</label>
-                <input type="text" placeholder="one foot to the other" />
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <div class="grid-x">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <input type="text" placeholder="small-9.cell" class="input-group-field" />
-                    <span class="input-group-label">.com</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Select Box</label>
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                </select>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 medium-6 cell">
-                <label>Choose Your Favorite</label>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-              </div>
-              <div class="large-6 medium-6 cell">
-                <label>Check these out</label>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Textarea Label</label>
-                <textarea placeholder="small-12.cell"></textarea>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="large-4 medium-4 cell">
-          <h5>And Fancy Buttons</h5>
-          <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">Blue clicky box</a><br/>
-          <a href="https://en.wikipedia.org/wiki/Comic_Sans" class="success button">Green clicky box</a><br/>
-          <a href="https://www.youtube.com/watch?v=lh_k0k9v6lo" class="alert button">Red clicky box</a><br/>
-          <a href="https://i.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg" class="secondary button">Less colorful clicky box</a></p>
-          <div class="callout">
-            <p>Docs for more info:</p>
-            <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
-          </div>
-        </div>
+      <div class="grid-x grid-margin-x grid-padding-x">
+	<div class="cell auto"><div class="callout">don't want to bother typing in cell sizes?</div></div>
+	<div class="cell auto"><div class="callout">these are auto sizing cells</div></div>
+	<div class="cell auto"><div class="callout">!!</div></div>
+      </div>
+      <div class="grid-x grid-margin-x grid-padding-x">
+	<div class="cell shrink"><div class="callout">??</div></div>
+	<div class="cell shrink"><div class="callout">to size based on text size rather than size of space, use shrink!</div></div>
       </div>
     </div>
-
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+    
   </body>
 </html>
