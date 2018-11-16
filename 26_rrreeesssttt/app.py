@@ -17,15 +17,15 @@ def a():
     #print(data)
     u.close()
     
-    u = urllib.request.urlopen("https://dog.ceo/api/breed/Dachshund/image/random")
+    u = urllib.request.urlopen("https://dog.ceo/api/breed/dachshund/images/random")
     response = u.read()
     data1 = json.loads(response)
     
     
     u = urllib.request.urlopen("http://numbersapi.com/42/trivia")
-    data2 = u.read()
-    
-    return render_template("bazinga.html", desk=data["value"]["joke"], earl1=data1["message"], desk2=data2)
+    data2 = u.read().decode('utf8')
+    print(data2)
+    return render_template("bazinga.html", desk=data["value"]["joke"], earl1=data1["message"], desk2=str(data2))
 
 if __name__ == "__main__":
     app.debug = True
