@@ -13,16 +13,17 @@ var gcd_input2 = document.getElementById("gcd_input2");
 
 
 var fibonaccir = (n) => {
-    return n < 2 ? n : fibonacci(n-1) + fibonacci(n-2);
+    return n < 2 ? n : fibonaccir(n-1) + fibonaccir(n-2);
 }
 
 var fibonacci = () => {
-    fib_output.innerHTML = fibonaccir(fib_input.innerHTML);
+    fib_output.innerHTML = fibonaccir(fib_input.value);
 }
 
 var gcd = () => {
-    a = gcd_input1.innerHTML;
-    b = gcd_input2.innerHTML;
+    a = gcd_input1.value;
+    b = gcd_input2.value;
+	console.log(a + ", " + b);
     var max = 1;
     for(var i = 1; i <= a && i <= b; i += max)
 	if(a % i === 0 && b % i === 0)
