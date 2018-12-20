@@ -1,4 +1,4 @@
-// team Cygnus... Vismund Cygnus -- Theodore Peters, 
+// team Cygnus... Vismund Cygnus
 // SoftDev pd7
 // K29 -- sequential progression progression
 // 2018-12-20
