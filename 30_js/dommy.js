@@ -11,20 +11,22 @@ var removeItem = (e) => {
 	e.remove();
 }
 
-for (let i = 0; i < theelements.length; i++){
-	let e = theelements[i];
+var eventify = (e) => {
     e.addEventListener('mouseover',()=>{header.innerHTML=e.innerHTML;});
     e.addEventListener('mouseout',()=>{header.innerHTML="Hello, World!";});
     e.addEventListener('click',()=>{removeItem(e);});
 }
 
+for (let i = 0; i < theelements.length; i++){
+    let e = theelements[i];
+    eventify(e);
+}
+
 var addItem = () => {
     let e=document.createElement("li");
     e.innerHTML = "wORD";
-	thelist.appendChild(e);
-	e.addEventListener('mouseover',()=>{header.innerHTML=e.innerHTML;});
-    e.addEventListener('mouseout',()=>{header.innerHTML="Hello, World!";});
-    e.addEventListener('click',()=>{removeItem(e);});
+    thelist.appendChild(e);
+    eventify(e);
 }
 
 document.getElementById("b").addEventListener('click', addItem);
